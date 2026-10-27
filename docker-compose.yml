@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  verifier-app:
+    build: .
+    container_name: verifier-app
+    ports:
+      - "3000:3000"
+    environment:
+      - SMTP_HOST=smtp.protonmail.ch
+      - SMTP_PORT=587
+      - SMTP_SECURE=false
+      - SMTP_USER=your-custom-domain@email.com
+      - SMTP_PASS=your_proton_generated_smtp_token
